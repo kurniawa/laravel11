@@ -12,15 +12,17 @@ class PostController extends Controller
     {
         $data = [
             'title' => 'Blog',
-            'posts' => Post::manual_all(),
+            // 'posts' => Post::manual_all(),
+            'posts' => Post::all(), // Eloquent ORM
         ];
 
         return view('posts.index', $data);
     }
 
-    function show($slug)
+    function show(Post $post)
     {
-        $post = Post::manual_find($slug);
+        // $post = Post::manual_find($slug);
+        // $post = Post::where('slug', $slug)->first();
 
         $data = [
             'title' => 'Single Post',

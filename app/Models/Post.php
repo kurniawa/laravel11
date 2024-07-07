@@ -10,6 +10,8 @@ class Post extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+    // protected $table = 'blog_posts'; // Apabila nama table nya lain, bukan posts, maka bisa didefinisikan disini.
+    // protected $primaryKey = 'post_id'; // Apabila ternyata primaryKey nya bukan ID, maka dapat didefinisikan disini.
 
     static function manual_all(): array
     {
